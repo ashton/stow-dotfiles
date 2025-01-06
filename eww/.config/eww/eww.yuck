@@ -1,0 +1,225 @@
+(include "./system-bar/windows.yuck")
+
+(defwidget workspace-icon-widget [icon active]
+  (image :icon icon
+         :icon-size "menu"
+         :active active
+         :halign "center"
+         :valign "center"
+         :class "workspace-icon ${active ? "active" : ""}"))
+
+(defwidget workspaces-widget []
+  (box
+    :class "workspaces-widget widget-background"
+    :orientation "h"
+    :space-evenly false
+    :spacing 20
+    (workspace-icon-widget :icon "start-here" :active true)
+    (workspace-icon-widget :icon "spotify-indicator" :active false)
+    (workspace-icon-widget :icon "nvim" :active false)
+    (workspace-icon-widget :icon "firefox" :active false )))
+
+
+(defwidget volume-widget [volume]
+    (image :icon {volume == 0 ? "audio-volume-muted" : volume < 30 ? "audio-volume-low" : volume < 60 ? "audio-volume-medium" : "audio-volume-high"}
+           :class "volume ${volume == 0 ? "muted" : volume < 50 ? "low" : "high"}"
+           :halign "end"))
+
+(defwidget network-widget [connected]
+    (image :icon {connected ? "network-wired" : "network-wired-offline"}))
+
+(defwidget date-widget []
+    (label :text "  ${formattime(EWW_TIME, "%d/%m/%Y")}"
+           :halign "end"))
+
+(defwidget clock-widget []
+    (label 
+      :class "clock"
+      :text "󰥔  ${formattime(EWW_TIME, "%H:%M")}"
+      :halign "end"))
+
+(defwidget cal-time-widget []
+  (box :class "cal-time-widget widget-background"
+       :halign "end"
+       :space-evenly false
+       :spacing 10
+    (date-widget)
+    (clock-widget)))
+
+  (defwidget system-status-widget []
+    (box :class "system-status-widget widget-background"
+         :halign "end"
+         :space-evenly false
+         :spacing 15
+    (volume-widget :volume 68)
+    (network-widget :connected true)))
+
+(defwidget window-title-widget
+[title]
+  (box
+    (image :icon "windows")
+(label :class "window-title"
+       :text title)
+  )
+)
+
+(defwidget window-state-widget
+[state]
+  (image :class "window-state"
+         :icon {state == "float"
+                 ? "preferences-system-windows"
+                 : (state == "stack")
+                     ? "grid-rectangular" : "emblem-question" }))
+
+(defwidget submode-widget
+[submode]
+  (box :space-evenly false :spacing 5
+    (image :icon "indicator-keylock-symbolic")
+  (label :class "submode-widget"
+         :text submode)))
+
+(defwidget windows-widget
+  []
+  (box :class "windows-widget"
+       :halign "center"
+       :space-evenly false
+       :spacing 10
+    (window-title-widget :title "Firefox")
+    (window-state-widget :state "float")))
+
+(defwidget kb-layout-widget
+[layout]
+  (image :class "kb-layout-widget"
+         :icon "indicator-keyboard-En"))
+
+(defwidget keys-widget
+  []
+  (box :class "keys-widget widget-background"
+       :halign "center"
+       :space-evenly false
+       :spacing 10
+    (kb-layout-widget :layout "us")
+    (submode-widget :submode "window")))
+
+(defwidget music-data-widget
+[album-image title author]
+  (box :class "music-data-widget"
+       :spacing 10
+       :space-evenly false
+       (image :class "album-image"
+              :path album-image
+              :width 20
+              :height 20
+              :image-width 25
+              :image-height 25
+              :vexpand false
+              :hexpand false
+              :halign "end")
+       (box :orientation "v"
+         (label :class "music-title"
+                :text title)
+         (label :class "music-author"
+                :text author))))
+
+(defwidget music-mini-player-widget
+[]
+  (box :class "mini-music-player"
+       :orientation "h"
+       :space-evenly false
+       :spacing 15
+       :halign "end"
+    (button
+      (image :class "back-button"
+           :icon "media-skip-backward-symbolic"))
+(button
+      (image :class "back-button"
+           :icon "player-time"))
+(button
+      (image :class "next-button"
+           :icon "media-skip-forward-symbolic"))
+  )
+)
+
+(defwidget music-widgets
+[]
+  (box :class "widget-background"
+       :space-evenly false
+       :spacing 15
+       :orientation "h"
+    (music-data-widget
+      :album-image "/home/john/Downloads/iron.jpg"
+      :title "titulo da musica"
+      :author "cantor da musica")
+    (music-mini-player-widget)
+  )
+)
+
+(defwidget system-control-widget
+[]
+
+  (box :class "system-control-widget widget-background"
+       :space-evenly false
+       :spacing 15
+    (button
+  (image :icon "gnome-logout"))
+    (button
+  (image :icon "system-restart"))
+    (button 
+  (image :icon "gnome-shutdown"))
+))
+
+(defwidget left-container []
+  (box
+    :class "left-container"
+    :orientation "h"
+    :hexpand false
+    :halign "start"
+    :space-evenly false
+    (workspaces-widget)))
+
+(defwidget middle-container
+   []
+   (box
+     :class "middle-container"
+     :orientation "h"
+     :halign "center"
+     :space-evenly "false"
+     :spacing 20
+    (windows-widget)
+    (keys-widget)
+    (box
+      (music-widgets)
+    )
+    ))
+
+(defwidget right-container
+  []
+  (box
+    :class "right-container"
+    :orientation "h"
+    :halign "end"
+    :spacing 20
+    :space-evenly false
+    (system-status-widget)
+    (cal-time-widget)
+    (systray :pack-direction "ltr" :icon-size 15 :prepend-new true)
+    (system-control-widget)
+))
+
+(defwindow system-bar
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry
+              :x "0%"
+              :y "0%"
+              :anchor "top center"
+              :width "100%"
+              :height "40px")
+  :exclusive true
+  :focusable false
+  :namespace "eww"
+  (box :orientation "h"
+ (left-container)
+ (middle-container)
+ (right-container)))
+

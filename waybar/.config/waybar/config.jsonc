@@ -1,0 +1,106 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": [
+    "group/left"
+  ],
+  "modules-center": [
+    "group/center"
+  ],
+  "modules-right": [
+    "group/right"
+  ],
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces"
+    ]
+  },
+  "group/center": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/window",
+      "hyprland/submap"
+    ]
+  },
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "pulseaudio",
+      "pulseaudio/slider",
+      "tray",
+      "clock"
+    ]
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "dash": "󰨇",
+      "web": "󰈹",
+      "code": "",
+      "music": "󰓇"
+    }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 16,
+    "rewrite": {
+      "^v (.*)$": " $1"
+    }
+  },
+  "hyprland/submap": {
+    "format": "󰽘 [{}]",
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "  {}"
+  },
+  "network": {
+    "format-ethernet": "󰈀 ",
+    "format-wifi": " {essid}",
+    "format-disconnected": "󰅛 ",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "format-muted": "",
+      "default": [
+        "",
+        ""
+      ]
+    }
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "days": "<span color='#DDC7A1'><b>{}</b></span>",
+        "weekdays": "<span color='#FFCA40'><b>{}</b></span>",
+        "today": "<span color='#DA025D'><b><u>{}</u></b></span>"
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-scroll-up": "shift-up",
+        "on-scroll-down": "shift-down"
+      }
+    }
+  }
+}

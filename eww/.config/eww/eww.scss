@@ -1,0 +1,96 @@
+$dark-yellow: rgba(215, 153, 33, 1);
+$yellow: rgba(250, 189, 47, 1);
+$green: rgba(142,192,124,1);
+$dark-green2: rgba(152, 151, 26, 1);
+$red: rgba(251,73,52,1);
+$dark-pale-blue: rgba(69, 133, 136, 1);
+$pale-blue: rgba(131, 165, 152, 1);
+$bg0: rgba(40, 40, 40, 1);
+$bg1: rgba(60, 56, 54, 0.8);
+$gray: rgba(146, 131, 116, 1);
+$light-text: rgba(235, 219, 178, 1);
+$transparent: rgba(0, 0, 0, 0);
+
+* { all: unset; }
+
+.system-bar {
+  font-size: 17px;
+  color: $light-text;
+}
+
+.system-bar .widget-background {
+  border-radius: 10px;
+  background-color: $bg0;
+  padding: 0 5px;
+}
+
+.system-bar {
+  padding-top: 5px;
+}
+
+.left-container {
+}
+
+.right-container {
+  padding-right: 5px;
+}
+
+.workspace-icon {
+  padding: 0 5px;
+}
+
+.workspaces-widget {
+  padding-right: 7px;
+  padding-left: 5px;
+}
+
+.workspaces-widget .active {
+  color: $yellow;
+}
+
+.network.active {
+  color: $green;
+}
+
+.network.offline {
+  color: $red;
+}
+
+.volume.muted {
+  color: $gray;
+}
+
+.volume.low {
+  color: $pale-blue;
+}
+
+.volume.high {
+  color: $dark-pale-blue;
+}
+
+.windows-widget {
+  border-radius: 10px;
+  background-color: $bg0;
+  padding-right:10px;
+}
+
+.window-state {
+  color: $pale-blue;
+}
+
+.music-data-widget {
+  padding: 5px;
+}
+
+.music-data-widget .music-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.music-data-widget .music-author {
+  font-size: 12px;
+}
+
+.clock-text {
+  font-family: Comic Mono;
+}

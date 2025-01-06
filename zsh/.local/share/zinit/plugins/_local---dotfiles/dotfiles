@@ -1,0 +1,67 @@
+#!/usr/bin/bash
+
+function help_text() {
+  echo -e "Usage: dotfiles <command> <package>
+
+Commands:
+  install  Adds symlinks for the files defined in package
+  rm       Removes symlinks previously added for files defined in package
+  reload   Same as running 'dotfiles rm <package> && dotfiles install <package>'
+
+Description:
+  dotfiles manages all configuration files and folders using GNU Stow
+
+Requirements:
+  A DOT environment variable must be set with the path to your stow packages."
+}
+
+function main() {
+  case $1 in
+    --help|-h)
+      help_text
+      exit 0
+    ;;
+    install)
+      echo "Installing stow package: $2"
+      stow -d $DOT -t ~ $2
+      exit 0
+    ;;
+    rm)
+      echo "Removing links from stow package: $2"
+      stow -d $DOT -Dt ~ $2
+      exit 0
+    ;;
+    reload)
+      echo "Reinstalling links from stow package: $2"
+      stow -d $DOT -Rt ~ $2
+      exit 0
+    ;;
+    *)
+      echo "Unknown option."
+      exit 1
+    ;;
+  esac
+}
+
+function validate_dotfiles_env_var() {
+  if [[ ! -v DOT ]]; then
+    echo "DOT environment variable must be set first." >&2
+    exit 1
+  fi
+}
+
+function validate_dotfiles_path() {
+  if [[ ! -d $DOT ]]; then
+    echo "Path ($DOT) does not exist in your file system." >&2
+    exit 1
+  fi
+}
+
+if [[ "$#" -eq 0 ]]; then
+  help_text
+  exit 0
+fi
+
+validate_dotfiles_env_var
+validate_dotfiles_path
+main "$@"

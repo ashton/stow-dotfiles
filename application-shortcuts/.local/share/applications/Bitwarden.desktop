@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Bitwarden
+Comment=Password Manager
+Exec=/home/john/.local/bin/Bitwarden.AppImage
+Terminal=false
+Catagories=Security
+MimeType=x-scheme-handler/bitwarden;

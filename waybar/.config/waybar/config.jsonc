@@ -36,6 +36,12 @@
     ]
   },
   "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "dash": "*",
+      "code": "*",
+      "web": "*",
+      "music": "*"
+    },
     "format": "{icon}",
     "format-icons": {
       "dash": "󰨇",

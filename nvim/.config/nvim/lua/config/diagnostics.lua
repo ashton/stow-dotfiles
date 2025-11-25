@@ -6,4 +6,4 @@ local signs = {
   [diagnostic_severity.HINT] = "󰭻",
 }
 
-vim.diagnostic.config({ signs = {text = signs}, virtual_text = { prefix = "󰜱" }})
+vim.diagnostic.config({ signs = { text = signs }, virtual_text = { prefix = "󰜱" } })

@@ -6,7 +6,6 @@ return {
   { "<leader>bn", "<CMD>bn<CR>", desc = "Go to next buffer" },
   { "<leader>bp", "<CMD>bp<CR>", desc = "Go to previous buffer" },
   { "<leader>bl", "<CMD>b#<CR>", desc = "Go to last buffer" },
-
   { "<leader>c", group = "code", icon = "" },
   { "<leader>cd", "<CMD>lua vim.lsp.buf.definition()<CR>", icon = "󰞥", desc = "Go to symbol's definition" },
   { "<leader>cD", "<CMD>lua vim.lsp.buf.references()<CR>", icon = "", desc = "Rename item under the cursor" },
@@ -41,5 +40,6 @@ return {
   { "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", icon = "󰞥", desc = "go to symbol definition" },
   { "grr", icon = "" },
 
+  { "<C-SPACE>", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Open Diagnostic in a floating window", icon = { "󱂬 "} },
   { "z", group = "fold", icon = "" },
 }

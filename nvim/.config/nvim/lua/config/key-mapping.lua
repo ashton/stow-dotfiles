@@ -19,5 +19,6 @@ return {
   { "]", group = "next", icon = { "" } },
   { "]e", "<CMD>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next diagnostic" },
   { "g", group = "goto", icon = { "" } },
+  { "<C-SPACE>", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Open Diagnostic in a floating window", icon = { "󱂬 "} },
   { "z", group = "fold", icon = { "" } },
 }

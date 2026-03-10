@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
+Icon=bitwarden
 Name=Bitwarden
 Comment=Password Manager
 Exec=/home/john/.local/bin/Bitwarden.AppImage

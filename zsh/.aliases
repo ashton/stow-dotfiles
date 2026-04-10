@@ -14,6 +14,6 @@ alias yc="yay -Yc" # cleanup packages
 
 
 # stow aliases
-alias cfg-add="stow -vt ~"
-alias cfg-rm="stow -vDt ~"
-alias cfg-reload="stow -vRt ~"
+alias cfad="stow -vt ~"
+alias cfrm="stow -vDt ~"
+alias cfre="stow -vRt ~"

@@ -1,8 +1,22 @@
 local function setup_adapter(name, config)
   if type(name) == "number" then
     if type(config) == "string" then
-      config = require(config)
-      return config
+      return require(config)
+    elseif type(config) == "table" and type(config[1]) == "string" then
+      local adapter = require(config[1])
+      local meta = getmetatable(adapter)
+      local extra = {}
+      for k, v in pairs(config) do
+        if type(k) == "string" and k ~= "ft" then extra[k] = v end
+      end
+      if not vim.tbl_isempty(extra) then
+        if adapter.setup then
+          adapter.setup(extra)
+        elseif meta and meta.__call then
+          adapter = adapter(extra)
+        end
+      end
+      return adapter
     end
   elseif config ~= false then
     local adapter = require(name)
@@ -78,10 +92,12 @@ return {
     },
     opts = {
       adapters = {
-        { "neotest-elixir",       ft = { "elixir" } },
-        { "neotest-vitest",       ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "rescript" } },
-        { "rustaceanvim.neotest", ft = { "rust" } },
-        { "neotest-jest",         { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
+        { "neotest-elixir",        ft = { "elixir" } },
+        { "neotest-vitest",        ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "rescript" } },
+        { "rustaceanvim.neotest",  ft = { "rust" } },
+        { "neotest-jest",          ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
+        { "neotest-gleam-unitest", ft = { "gleam" } }
+
       },
       status = { virtual_text = true },
       output = { opn_on_run = true, }
@@ -152,8 +168,7 @@ return {
     end
   },
   {
-    "custom/neotest-gleam",
-    dev = true,
+    "ashton/neotest-gleam-unitest",
     dependencies = { "nvim-neotest/neotest" }
   }
 }

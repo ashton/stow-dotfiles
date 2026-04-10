@@ -1,0 +1,8 @@
+<dead_acute> <c> : "ç" U00E7
+<dead_acute> <C> : "Ç" U00C7
+<dead_tilde> <space>: "~" U007E # TILDE
+<dead_tilde> <dead_tilde>: "~" U007E # TILDE
+<dead_grave> <space>: "`" U0060 # GRAVE
+<dead_grave> <dead_grave>: "`" U0060 # GRAVE
+<dead_acute> <space>: "'" U0027
+<dead_diaeresis> <space>: "\""	quotedbl # QUOTATION MARK

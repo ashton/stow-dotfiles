@@ -1,9 +1,9 @@
 nodejs 18.20.2
 elm 0.19.1
 elixir 1.16.2-otp-26
-erlang 26.2.4
+erlang 28.4.1
 rust stable
 opam 2.1.5
 ocaml 5.1.1
 python 3.12.3
-gleam 1.10.0
+gleam 1.15.1

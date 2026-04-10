@@ -105,7 +105,30 @@ return {
         -- "nextls",
         "yamlls",
       },
-      automatic_enable = true
+      automatic_enable = {
+        exclude = { "rust_analyzer" }
+      }
     },
   },
+  {
+    "rachartier/tiny-code-action.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      -- optional picker via telescope
+      { "nvim-telescope/telescope.nvim" },
+    },
+    event = "LspAttach",
+    keys = {
+      {
+        "<leader>ca",
+        "<cmd>lua require(\"tiny-code-action\").code_action()<CR>",
+        desc = "Code Actions List"
+      },
+      {
+        "<A-CR>",
+        "<cmd>lua require(\"tiny-code-action\").code_action()<CR>",
+        desc = "Code Actions List"
+      }
+    }
+  }
 }

@@ -78,5 +78,15 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(defun next-and-enlarge-window()
+  (interactive)
+  (other-window +1)
+  (doom/window-enlargen))
 
+(map!
+ :desc "Go to next window and enlarge it"
+ :leader "wO" #'next-and-enlarge-window)
 
+(map!
+ :desc "Go to next window and enlarge it"
+ :n "C-]" #'next-and-enlarge-window)

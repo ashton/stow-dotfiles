@@ -77,6 +77,25 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(use-package! evil-ts-obj
+  :config
+  (setq evil-ts-obj-compound-thing-key "s"
+        evil-ts-obj-param-thing-key "a"
+        evil-ts-obj-statement-thing-key "S")
+  ;; The macro binds keys into the text-object maps at load time.
+  ;; Unset the defaults that conflict ("e" for compound, "s" for statement)
+  ;; then re-run the macro so the maps reflect the variables above.
+  (dolist (map (list evil-ts-obj-inner-text-objects-map
+                     evil-ts-obj-outer-text-objects-map
+                     evil-ts-obj-upper-text-objects-map
+                     evil-ts-obj-UPPER-text-objects-map
+                     evil-ts-obj-lower-text-objects-map
+                     evil-ts-obj-LOWER-text-objects-map))
+    (keymap-unset map "e")
+    (keymap-unset map "s"))
+  (evil-ts-obj-setup-all-text-objects compound evil-ts-obj-compound-thing-key)
+  (evil-ts-obj-setup-all-text-objects statement evil-ts-obj-statement-thing-key)
+  (evil-ts-obj-setup-all-text-objects param evil-ts-obj-param-thing-key))
 
 (defun next-and-enlarge-window()
   (interactive)

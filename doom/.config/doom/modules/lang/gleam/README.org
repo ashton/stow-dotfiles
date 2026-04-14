@@ -1,0 +1,78 @@
+#+title:    :lang gleam
+#+subtitle: The friendly language with no runtime errors
+#+created:  April 14, 2026
+
+* Description :unfold:
+This module adds [[https://gleam.run][Gleam]] support via [[https://github.com/gleam-lang/gleam-mode][gleam-ts-mode]], using Emacs' built-in tree-sitter
+for syntax highlighting and structural editing.
+
+- Syntax highlighting (via tree-sitter)
+- LSP support: code completion, diagnostics, go-to-definition, find references (requires [[*Module flags][+lsp]])
+- Tree-sitter text objects via ~evil-ts-obj~ (requires [[*Module flags][+evil-ts-obj]])
+
+** Module flags
+- +lsp ::
+  Enable LSP support for ~gleam-ts-mode~. Requires [[doom-module::tools lsp]] and the
+  ~gleam~ binary (Gleam's LSP server is built in: ~gleam lsp~).
+- +evil-ts-obj ::
+  Enable tree-sitter-powered text objects via ~evil-ts-obj~. Registers Gleam
+  node types for compound, statement, param, and string things.
+
+** Packages
+- [[doom-package:gleam-ts-mode]]
+
+* Installation
+[[id:01cffea4-3329-45e2-a892-95a384ab2338][Enable this module in your ~doom!~ block.]]
+
+This module requires Emacs 29+ (built-in tree-sitter support) and the Gleam
+tree-sitter grammar.
+
+** Gleam
+Install the ~gleam~ binary from [[https://gleam.run/getting-started/installing/][gleam.run]]:
+
+- Arch Linux: ~$ pacman -S gleam~
+- macOS: ~$ brew install gleam~
+- Other: download from the [[https://github.com/gleam-lang/gleam/releases][GitHub releases page]]
+
+The ~gleam~ binary is required for +lsp (it includes the LSP server).
+
+** Tree-sitter grammar
+After enabling the module and running ~doom sync~, install the grammar from
+inside Emacs:
+
+#+begin_src
+M-x treesit-install-language-grammar RET gleam RET
+#+end_src
+
+* Usage
+** Text objects (~+evil-ts-obj~)
+With the ~+evil-ts-obj~ flag, the following Gleam node types are registered as
+evil-ts-obj things. The actual keys depend on your ~evil-ts-obj~ configuration.
+
+| Thing    | Nodes                                                                    |
+|----------+--------------------------------------------------------------------------|
+| compound | ~function~, ~anonymous_function~, ~case~, ~case_clause~, ~block~        |
+| statement| ~let~, ~let_assert~, ~use~, ~assert~                                     |
+| param    | ~function_parameters~, ~anonymous_function_parameters~, ~list~, ~tuple~, ~record~ |
+| str      | ~string~                                                                 |
+
+* Configuration
+To enable LSP and evil-ts-obj support, add the flags to your ~doom!~ block:
+
+#+begin_src emacs-lisp
+(doom! :lang
+       (gleam +lsp +evil-ts-obj))
+#+end_src
+
+* Troubleshooting
+** ~treesit-language-available-p~ returns nil
+The Gleam tree-sitter grammar is not installed. Run:
+#+begin_src
+M-x treesit-install-language-grammar RET gleam RET
+#+end_src
+
+** LSP not starting
+Make sure the ~gleam~ binary is on your ~$PATH~:
+#+begin_src sh
+gleam --version
+#+end_src

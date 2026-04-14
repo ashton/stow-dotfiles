@@ -77,13 +77,6 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(use-package! gleam-ts-mode
-  :mode (rx ".gleam" eos))
 
-(after! treesit
-  (add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-ts-mode)))
 
-(after! gleam-ts-mode
-  (unless (treesit-language-available-p 'gleam)
-    (gleam-ts-install-grammar)))
 

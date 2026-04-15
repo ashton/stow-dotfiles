@@ -1,5 +1,4 @@
 ;;; lang/gleam/config.el -*- lexical-binding: t; -*-
-
 (use-package! gleam-ts-mode
   :mode (rx ".gleam" eos)
   :init (set-tree-sitter! nil 'gleam-ts-mode
@@ -9,7 +8,7 @@
     (add-hook 'gleam-ts-mode-local-vars-hook #'lsp 'append)))
 
 (when (modulep! +evil-ts-obj)
-  (use-package evil-ts-obj
+  (use-package! evil-ts-obj
     :config
     (defvar evil-ts-obj-gleam-compound-nodes
       '("function" "anonymous_function" "case_clause" "case" "block")

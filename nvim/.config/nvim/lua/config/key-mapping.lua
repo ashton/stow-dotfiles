@@ -1,11 +1,6 @@
 return function()
   vim.keymap.set("n", "s", "<nop>")
   vim.keymap.set("n", "<C-I>", "<Tab>", { noremap = true })
-  vim.keymap.del("n", "gra")
-  vim.keymap.del("n", "gri")
-  vim.keymap.del("n", "grn")
-  vim.keymap.del("n", "grr")
-  vim.keymap.del("n", "grt")
   return {
     { "<bs><bs>", desc = "Clear search highlights" },
     { "<tab>", "%", desc = "go to matching part", mode = { "n" } },

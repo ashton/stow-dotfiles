@@ -47,6 +47,16 @@ return {
               to = "(.*).ex",
             }
           }
+        },
+        projects = {
+          prompt_prefix = "󱎸  ",
+          layout_strategy = "horizontal",
+          layout_config = {
+            anchor = "N",
+            height = 0.25,
+            width = 0.6,
+            prompt_position = "bottom",
+          },
         }
       }
     },
@@ -74,13 +84,6 @@ return {
     dependencies = { { "nvim-telescope/telescope.nvim" } },
     config = function()
       require('telescope').load_extension("switch")
-    end
-  },
-  {
-    "ahmedkhalf/project.nvim",
-    lazy = true,
-    config = function()
-      require("telescope").load_extension("projects")
     end
   },
   {

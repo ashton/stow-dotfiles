@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/john/.local/share/icons/cacodemon.png
+Name=Doom Emacs
+Comment=Nice editor
+Exec=/usr/bin/emacs
+Terminal=false
+Catagories=Development

@@ -17,6 +17,7 @@ export const fullscreenClient = focusedClient((client) => {
   return client.fullscreen === 2 || client.get_fullscreen?.() === 2;
 });
 export const emptyWorkspace = focusedClient((client) => !client);
+
 export const globalMargin = emptyWorkspace((empty) => (empty ? 20 : 5));
 export const globalTransition = 300;
 

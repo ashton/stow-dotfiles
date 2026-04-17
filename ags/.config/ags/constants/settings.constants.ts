@@ -121,4 +121,8 @@ export const defaultSettings: Settings = {
       max: 30,
     },
   },
+  workspaces: {
+    workspaceNameToIcon: { 'music': '', 'web': '󰈹', 'dashboard': '󰧨', 'messengers': '󰭹', 'special:code': '' },
+    workspaceNameToDescription: { 'music': 'Musica', 'web': 'Web', 'dashboard': 'Dashboard', 'messengers': 'Messengers', 'special:code': 'Coding' }
+  },
 };

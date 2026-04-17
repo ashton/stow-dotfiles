@@ -1,0 +1,16 @@
+@import "left_panel";
+
+.bar {
+  font-family: "Monaco Nerd Font";
+
+  &.full {}
+
+  &.empty {}
+
+  .component {
+    background-color: $background-transparent;
+    border-radius: 5%;
+    font-size: 16px;
+    padding: 0px 10px 0px 10px;
+  }
+}

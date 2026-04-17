@@ -36,4 +36,8 @@ export interface Settings {
     scale: AGSSetting;
     fontSize: AGSSetting;
   };
+  workspaces: {
+    workspaceNameToIcon: Record<string, string>,
+    workspaceNameToDescription: Record<string, string>
+  }
 }

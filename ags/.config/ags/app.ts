@@ -1,6 +1,6 @@
 import app from "ags/gtk4/app"
-import style from "./style.scss"
-import Bar from "./widgets/Bar"
+import style from "./scss/style.scss"
+import Bar from "./widgets/bar/Bar"
 
 app.start({
   css: style,

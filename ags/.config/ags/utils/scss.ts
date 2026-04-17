@@ -9,8 +9,6 @@ const tmpCss = `/tmp/tmp-style.css`;
 const tmpScss = `/tmp/tmp-style.scss`;
 const scss_dir = `${GLib.get_home_dir()}/.config/ags/scss`;
 
-const walScssColors = `${GLib.get_home_dir()}/.cache/wal/colors.scss`;
-const walCssColors = `${GLib.get_home_dir()}/.cache/wal/colors.css`;
 const defaultColors = `${GLib.get_home_dir()}/.config/ags/scss/defaultColors.scss`;
 
 export const getCssPath = () => {
@@ -25,9 +23,7 @@ export function refreshCss() {
         $OPACITY: ${globalSettings.peek().ui.opacity.value};
         $FONT-SIZE: ${globalSettings.peek().ui.fontSize.value}px;
         $SCALE: ${globalSettings.peek().ui.scale.value}px;
-        ' | cat -p - ${defaultColors} \
-        $([ -f ${walScssColors} ] && echo ${walScssColors}) \
-        $([ -f ${walCssColors} ] && echo ${walCssColors}) \
+        ' | cat - ${defaultColors} \
         ${scss} > ${tmpScss} && sassc ${tmpScss} ${tmpCss} -I ${scss_dir}"`);
 
   App.reset_css();

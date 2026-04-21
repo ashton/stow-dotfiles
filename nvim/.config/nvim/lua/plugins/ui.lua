@@ -1,5 +1,10 @@
 local key_mapping = require("config.key-mapping")
 return {
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "BufEnter",
+    opts = { "javascript", "typescript", "javascriptreact", "typescriptreact", "css", "scss", "html" }
+  },
   -- Visible Indentations
   {
     "lukas-reineke/indent-blankline.nvim",

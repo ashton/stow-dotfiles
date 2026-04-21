@@ -97,13 +97,3 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
     })
   end
 })
-
--- Treesitter enabled for these file types
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bash', 'elixir', 'html', 'javascript', 'json', 'lua', 'markdown', 'python', 'rust', 'typescript', 'yaml' },
-  callback = function()
-    vim.treesitter.start()
-    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo[0][0].foldmethod = 'expr'
-  end,
-})

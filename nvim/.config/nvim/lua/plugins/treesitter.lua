@@ -1,11 +1,13 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    lazy = false,
+    main = "nvim-treesitter.configs",
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
         'bash',
+        'c',
+        'dart',
         'elixir',
         'heex',
         'eex',
@@ -29,14 +31,16 @@ return {
         'yaml',
         'dap_repl'
       },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter').install(opts.ensure_installed)
-    end
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true
+      },
+    }
   },
   {
     "nkrkv/nvim-treesitter-rescript",
-    enabled = false,
     dependencies = { "nvim-treesitter/nvim-treesitter" }
   },
   {

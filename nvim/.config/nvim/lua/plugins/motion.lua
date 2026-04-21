@@ -36,8 +36,8 @@ return {
       }
     },
     keys = {
-      { "iw", "<cmd>lua require('various-textobjs').subword('inner')<CR>", mode = { "o", "x" }, desc = "go to next inner subword" },
-      { "aw", "<cmd>lua require('various-textobjs').subword('outer')<CR>", mode = { "o", "x" }, desc = "go to next outer subword" },
+      { "is", "<cmd>lua require('various-textobjs').subword('inner')<CR>", mode = { "o", "x" }, desc = "go to next inner subword" },
+      { "as", "<cmd>lua require('various-textobjs').subword('outer')<CR>", mode = { "o", "x" }, desc = "go to next outer subword" },
       { "iv", "<cmd>lua require('various-textobjs').value('inner')<CR>",   mode = { "o", "x" }, desc = "go to next inner value" },
       { "av", "<cmd>lua require('various-textobjs').value('outer')<CR>",   mode = { "o", "x" }, desc = "go to next outer value" },
       { "ik", "<cmd>lua require('various-textobjs').key('inner')<CR>",     mode = { "o", "x" }, desc = "go to next inner key" },
@@ -47,9 +47,9 @@ return {
   {
     "chrisgrieser/nvim-spider",
     keys = {
-      { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" } },
-      { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
-      { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
+      { "g]s", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" } },
+      { "g]e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
+      { "g[s", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
     },
   },
 }

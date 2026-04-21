@@ -40,9 +40,8 @@ return function()
     { "]e", "<CMD>lua vim.diagnostic.goto_next()<CR>", icon = "󰮲", desc = "Go to next diagnostic" },
 
     { "g", group = "goto" },
-    { "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", icon = "󰞥", desc = "go to symbol definition" },
-    { "gr", "<CMD>lua vim.lsp.buf.references()<CR>", icon = { "󰘦" }, desc = "Go to symbol references" },
-    { "grr", icon = "" },
+    { "gd", icon = "󰞥" },
+    { "gr", icon = "󰘦" },
 
     { "X", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Open diagnostic in a floating window", icon = { "" } },
     { "<C-SPACE>", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Open Diagnostic in a floating window", icon = { "󱂬 " } },

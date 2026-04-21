@@ -1,0 +1,6 @@
+[tools]
+"cargo:exa" = "latest"
+node = "latest"
+rust = "latest"
+rustic = "latest"
+usage = "latest"

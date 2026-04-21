@@ -1,0 +1,19 @@
+alias cfg="dotbare"
+alias cfgs="dotbare fstat"
+alias cat="bat"
+alias vim="nvim"
+alias v="vim"
+alias hc="hyprctl"
+
+# yay aliases
+alias ys="yay" # search for term
+alias yi="yay -S" # install package
+alias yr="yay -Rns" # remove package
+alias yu="yay -Sua" # upgrade packages
+alias yc="yay -Yc" # cleanup packages
+
+
+# stow aliases
+alias cfg-add="stow -vt ~"
+alias cfg-rm="stow -vDt ~"
+alias cfg-reload="stow -vRt ~"

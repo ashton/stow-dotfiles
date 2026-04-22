@@ -1,4 +1,4 @@
-import { focusedClient } from "../../variables"
+import { focusedClient } from "../../../variables"
 import { createBinding, With } from "ags";
 
 export default () =>

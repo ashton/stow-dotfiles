@@ -1,6 +1,6 @@
 import { createState, With } from "ags";
 import AstalNetwork from "gi://AstalNetwork?version=0.1";
-import * as networkService from '../../services/network';
+import * as networkService from '../../../services/network';
 
 
 const network = AstalNetwork.get_default();

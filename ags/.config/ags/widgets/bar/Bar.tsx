@@ -1,17 +1,15 @@
 import App from "ags/gtk4/app";
 import { Astal, Gdk } from "ags/gtk4";
-import { getMonitorName } from "../../utils/monitor";
 import { emptyWorkspace, fullscreenClient, globalMargin } from "../../variables";
-import LeftPanel from "../leftPanel/LeftPanel";
-import CenterPanel from "../centerPanel/CenterPanel";
-import RightPanel from "../rightPanel/RightPanel";
+import LeftPanel from "./LeftPanel";
+import CenterPanel from "./CenterPanel";
+import RightPanel from "./RightPanel";
 
 export default (monitor: Gdk.Monitor) => {
-  const monitorName = getMonitorName(monitor);
   (
     <window
       gdkmonitor={monitor}
-      name={`bar-${monitorName}`}
+      name={"bar"}
       namespace="bar"
       class="Bar"
       application={App}

@@ -1,7 +1,7 @@
 import AstalHyprland from "gi://AstalHyprland?version=0.1";
 import { Accessor, For } from "ags";
-import { workspaces, focusedWorkspace, globalSettings } from "../../variables";
-import * as wsService from '../../services/workspace';
+import { workspaces, focusedWorkspace, globalSettings } from "../../../variables";
+import * as wsService from "../../../services/workspace";
 
 const orderedWorkspaces = workspaces((list: AstalHyprland.Workspace[]) =>
   list

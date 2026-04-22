@@ -1,0 +1,11 @@
+export { default as SystemMenu } from './SystemMenu';
+export { default as OutdatedPackages } from './OutdatedPackages';
+export { default as Workspaces } from './Workspaces';
+export { default as CurrentWindow } from './Window';
+export { default as Media } from './Media';
+export { default as Submap } from './SubMap';
+export { default as Volume } from './Volume';
+export { default as Network } from './Network';
+export { default as Clock } from './Clock';
+export { default as Systray } from './SysTray';
+export { default as Notifications } from './Notifications';

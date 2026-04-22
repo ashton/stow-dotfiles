@@ -30,7 +30,6 @@ const volumeIcon = createComputed(() => {
 
 audio.connect('speaker-added', (_, speaker) => {
   if (speaker.isDefault) {
-    print(`description: ${speaker.description}, volume: ${speaker.volume}, mute: ${speaker.mute}`);
     setDescription(speaker.description);
     setVolume(speaker.volume);
     setMuteValue(speaker.mute);

@@ -9,13 +9,10 @@ const filteredItems = items(list => list.filter(item => item.title != "Network")
 export default () =>
   <box class="component systray">
     <For each={filteredItems}>
-      {(item, _) => {
-        print(item.to_json_string());
-        return (
-          <button>
-            <image gicon={item.gicon} />
-          </button>
-        )
-      }}
+      {(item, _) => (
+        <button>
+          <image gicon={item.gicon} />
+        </button>
+      )}
     </For>
   </box>

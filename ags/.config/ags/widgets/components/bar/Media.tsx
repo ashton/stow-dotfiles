@@ -1,8 +1,8 @@
 import { createState } from "ags";
 import AstalMpris from "gi://AstalMpris?version=0.1"
-import * as mediaPlayerService from '../../services/media/mediaPlayer'
-import * as mediaService from '../../services/media/media'
-import { MediaPlayer } from "../../services/media/types";
+import * as mediaPlayerService from '../../../services/media/mediaPlayer';
+import * as mediaService from '../../../services/media/media'
+import { MediaPlayer } from "../../../services/media/types";
 import GLib from "gi://GLib?version=2.0";
 
 const mprisService = AstalMpris.get_default();

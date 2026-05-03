@@ -1,7 +1,8 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    main = "nvim-treesitter.configs",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
@@ -31,17 +32,33 @@ return {
         'yaml',
         'dap_repl'
       },
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true
-      },
-    }
-  },
-  {
-    "nkrkv/nvim-treesitter-rescript",
-    dependencies = { "nvim-treesitter/nvim-treesitter" }
+    },
+    config = function(_, opts)
+      require("nvim-treesitter").install(opts.ensure_installed)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
+        callback = function(args)
+          local buf = args.buf
+          local filetype = args.match
+
+          local language = vim.treesitter.language.get_lang(filetype) or filetype
+          if not vim.treesitter.language.add(language) then
+            return
+          end
+
+
+          vim.wo.foldmethod = "expr"
+          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+          -- Highlight
+          vim.treesitter.start(buf, language)
+
+          -- Indent
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      })
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

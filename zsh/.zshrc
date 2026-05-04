@@ -46,7 +46,6 @@ zinit wait lucid for        \
   kiurchv/asdf.plugin.zsh   \
   agkozak/zsh-z             \
   Tarrasch/zsh-bd           \
-  kazhala/dotbare           \
   reegnz/jq-zsh-plugin      \
   OMZP::colored-man-pages   \
   OMZP::fancy-ctrl-z        \
@@ -68,14 +67,14 @@ zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit load trapd00r/LS_COLORS
 
+zi ice has'eza' atinit'AUTOCD=1'
+zi light z-shell/zsh-eza
+
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
 zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
-
-zinit ice atload"unalias ld"
-zinit light RitchieS/zsh-exa
 
 zinit ice as"command" from"gh-r" atclone"./navi widget zsh > navi-widget.zsh" \
   atpull"%atclone" pick"navi" src"navi-widget.zsh"
@@ -89,8 +88,7 @@ zinit light decayofmind/zsh-fast-alias-tips
 
 zinit light wintermi/zsh-mise
 
-zinit load _local/dotfiles
-zi cdreplay -q
+zinit cdreplay -q
 
 ### Sources
 #. "$HOME/.cargo/env"

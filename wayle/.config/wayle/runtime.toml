@@ -1,0 +1,147 @@
+[general]
+font-sans = "Ubuntu Nerd Font"
+font-mono = "JetBrainsMono Nerd Font Propo"
+
+[bar]
+padding = 0.5
+bg = "transparent"
+button-rounding = "md"
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    "updates",
+    "hyprland-workspaces",
+    "window-title",
+]
+center = [
+    "media",
+    "cava",
+    "keybind-mode",
+    "keyboard-input",
+]
+right = [
+    "network",
+    "volume",
+    "systray",
+    "clock",
+    "notifications",
+]
+
+[styling.palette]
+bg = "#1d2021"
+surface = "#282828"
+elevated = "#3c3836"
+fg = "#ebdbb2"
+fg-muted = "#d5c4a1"
+primary = "#83a598"
+red = "#fb4934"
+yellow = "#fabd2f"
+green = "#b8bb26"
+blue = "#8ec07c"
+
+[modules.cava]
+color = "yellow"
+button-bg-color = "bg-overlay"
+
+[modules.clock]
+format = "%a %d/%m/%y %H:%M"
+icon-color = "fg-subtle"
+icon-bg-color = "status-info-subtle"
+label-color = "fg-muted"
+button-bg-color = "bg-overlay"
+
+[modules.dashboard]
+border-color = "fg-default"
+icon-color = "bg-overlay"
+icon-bg-color = "status-warning"
+
+[modules.hyprland-workspaces]
+show-special = false
+display-mode = "icon"
+divider = ""
+icon-size = 0.8999999761581421
+active-indicator = "underline"
+active-color = "green"
+container-bg-color = "bg-overlay"
+border-show = true
+border-color = "status-success-subtle"
+
+[modules.hyprland-workspaces.workspace-map.2]
+icon = "firefox"
+
+[modules.hyprland-workspaces.workspace-map.1]
+icon = "tbf-layout-dashboard-symbolic"
+
+[modules.hyprland-workspaces.workspace-map.-98]
+icon = "terminal"
+
+[modules.hyprland-workspaces.workspace-map.-97]
+icon = "si-logseq-symbolic"
+
+[modules.hyprland-workspaces.workspace-map.4]
+icon = "applications-programming"
+
+[modules.hyprland-workspaces.workspace-map.3]
+icon = "spotify"
+
+[modules.keybind-mode]
+icon-name = "cs-keyboard-symbolic"
+auto-hide = true
+icon-color = "fg-on-accent"
+icon-bg-color = "green"
+label-color = "green"
+
+[modules.keyboard-input]
+icon-name = "md-language_international-symbolic"
+button-bg-color = "bg-overlay"
+left-click = "fcitx5-config-qt"
+
+[modules.keyboard-input.layout-alias-map]
+"English (US, intl., with dead keys)" = "EN"
+
+[modules.media]
+icon-name = "tbf-headphones-symbolic"
+spinning-disc-icon = "tbf-headphones-symbolic"
+icon-color = "bg-surface"
+icon-bg-color = "status-warning"
+label-color = "status-warning"
+button-bg-color = "bg-overlay"
+
+[modules.media.player-icons]
+"*firefox*" = "firefox"
+"*spotify*" = "spotify"
+"*vlc*" = "vlc"
+"*.mpv" = "gnome-mpv"
+
+[modules.network]
+icon-color = "fg-muted"
+icon-bg-color = "status-info-subtle"
+label-color = "accent-hover"
+button-bg-color = "bg-overlay"
+
+[modules.notifications]
+icon-name = "notifications-symbolic"
+icon-unread = "notification-new-symbolic"
+icon-dnd = "notifications-disabled-symbolic"
+icon-color = "bg-surface-elevated"
+icon-bg-color = "status-info"
+label-show = false
+
+[modules.systray]
+icon-scale = 1.2000000476837158
+blacklist = [
+    "Network",
+    "Input*",
+]
+button-bg-color = "bg-overlay"
+
+[modules.volume]
+icon-bg-color = "accent"
+label-color = "accent-hover"
+button-bg-color = "bg-overlay"
+
+[wallpaper]
+engine-enabled = false

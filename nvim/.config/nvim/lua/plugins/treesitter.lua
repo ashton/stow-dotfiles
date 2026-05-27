@@ -1,8 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    main = "nvim-treesitter.configs",
+    branch = "master",
     build = ":TSUpdate",
+    lazy = false,
     opts = {
       ensure_installed = {
         'bash',
@@ -12,6 +13,7 @@ return {
         'heex',
         'eex',
         'elm',
+        'fsharp',
         'graphql',
         'html',
         'javascript',
@@ -31,13 +33,26 @@ return {
         'yaml',
         'dap_repl'
       },
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true
-      },
-    }
+    },
+    config = function(_, opts)
+      local nvim_ts = require("nvim-treesitter")
+      nvim_ts.setup()
+
+      for _, ft in ipairs(opts.ensure_installed) do
+        local lang = vim.treesitter.language.get_lang(ft)
+
+        if not vim.treesitter.language.add(lang) then
+          local available = vim.g.ts_available
+              or nvim_ts.get_available()
+          if not vim.g.ts_available then
+            vim.g.ts_available = available
+          end
+          if vim.tbl_contains(available, lang) then
+            nvim_ts.install(lang)
+          end
+        end
+      end
+    end
   },
   {
     "nkrkv/nvim-treesitter-rescript",

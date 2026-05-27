@@ -3,7 +3,8 @@ font-sans = "Ubuntu Nerd Font"
 font-mono = "JetBrainsMono Nerd Font Propo"
 
 [bar]
-padding = 0.5
+inset-edge = 0.5
+padding = 0.0
 bg = "transparent"
 button-rounding = "md"
 
@@ -69,23 +70,26 @@ container-bg-color = "bg-overlay"
 border-show = true
 border-color = "status-success-subtle"
 
-[modules.hyprland-workspaces.workspace-map.2]
-icon = "firefox"
+[modules.hyprland-workspaces.workspace-map.3]
+icon = "si-spotify-symbolic"
 
 [modules.hyprland-workspaces.workspace-map.1]
 icon = "tbf-layout-dashboard-symbolic"
 
 [modules.hyprland-workspaces.workspace-map.-98]
-icon = "terminal"
+icon = "terminal-symbolic"
+
+[modules.hyprland-workspaces.workspace-map.2]
+icon = "firefox-symbolic"
+
+[modules.hyprland-workspaces.workspace-map.4]
+icon = "applications-programming-symbolic"
 
 [modules.hyprland-workspaces.workspace-map.-97]
 icon = "si-logseq-symbolic"
 
-[modules.hyprland-workspaces.workspace-map.4]
-icon = "applications-programming"
-
-[modules.hyprland-workspaces.workspace-map.3]
-icon = "spotify"
+[modules.hyprland-workspaces.workspace-map.5]
+icon = "tbf-messages-symbolic"
 
 [modules.keybind-mode]
 icon-name = "cs-keyboard-symbolic"
@@ -112,8 +116,8 @@ button-bg-color = "bg-overlay"
 
 [modules.media.player-icons]
 "*firefox*" = "firefox"
-"*spotify*" = "spotify"
 "*vlc*" = "vlc"
+"*spotify*" = "spotify"
 "*.mpv" = "gnome-mpv"
 
 [modules.network]

@@ -84,11 +84,9 @@ return {
       "jfpedroza/neotest-elixir",
       "marilari88/neotest-vitest",
       "nvim-neotest/neotest-jest",
-      {
-        "mrcjkb/rustaceanvim",
-        version = '^5', -- Recommended
-        lazy = false,   -- This plugin is already lazy
-      }
+      "Issafalcon/neotest-dotnet",
+      "ashton/neotest-gleam-unitest",
+      "mrcjkb/rustaceanvim",
     },
     opts = {
       adapters = {
@@ -96,8 +94,8 @@ return {
         { "neotest-vitest",        ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "rescript" } },
         { "rustaceanvim.neotest",  ft = { "rust" } },
         { "neotest-jest",          ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
-        { "neotest-gleam-unitest", ft = { "gleam" } }
-
+        { "neotest-gleam-unitest", ft = { "gleam" } },
+        { "neotest-dotnet",        ft = { "fsharp" } }
       },
       status = { virtual_text = true },
       output = { opn_on_run = true, }
@@ -167,8 +165,4 @@ return {
       require("neotest").setup(opts)
     end
   },
-  {
-    "ashton/neotest-gleam-unitest",
-    dependencies = { "nvim-neotest/neotest" }
-  }
 }

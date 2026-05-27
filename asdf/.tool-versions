@@ -6,4 +6,4 @@ rust stable
 opam 2.1.5
 ocaml 5.1.1
 python 3.12.3
-gleam 1.15.1
+gleam 1.16.0

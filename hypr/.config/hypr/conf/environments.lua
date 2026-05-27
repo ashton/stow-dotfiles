@@ -1,0 +1,6 @@
+hl.env("MOZ_ENABLE_WAYLAND", "1")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("XMODIFIERS", "@im=fcitx")
+hl.env("GTK_IM_MODULE", "fcitx")
+hl.env("QT_IM_MODULE", "fcitx")
+hl.env("TERMINAL", "ghostty")

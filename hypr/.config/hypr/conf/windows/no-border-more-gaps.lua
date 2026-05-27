@@ -1,0 +1,12 @@
+hl.config({
+  general = {
+    gaps_in          = 20,
+    gaps_out         = 40,
+    border_size      = 0,
+    col              = {
+      active_border   = "rgba(f1dfdaff)",
+      inactive_border = "rgba(ffb59dff)",
+    },
+    resize_on_border = true,
+  }
+})

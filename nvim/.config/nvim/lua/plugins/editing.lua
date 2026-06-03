@@ -8,7 +8,7 @@ return {
   },
   {
     "Wansmer/treesj",
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'neovim-treesitter/nvim-treesitter' },
     lazy = true,
     keys = {
       { "<leader>cj", "<cmd>TSJJoin<CR>",   desc = "Join lines with TS context" },

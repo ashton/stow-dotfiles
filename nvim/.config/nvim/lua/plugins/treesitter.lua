@@ -1,72 +1,57 @@
+local function is_parser_installed(lang)
+  local installed = require("nvim-treesitter").get_installed()
+  return vim.tbl_contains(installed, lang)
+end
+
+local function is_parser_available(lang)
+  local available = require("nvim-treesitter").get_available()
+  return vim.tbl_contains(available, lang)
+end
+
+local function start_treesitter(buf, lang)
+  if not vim.treesitter.language.add(lang) then
+    vim.notify(
+      "Cannot load treesitter parser for language " .. lang,
+      vim.log.levels.WARN
+    )
+    return
+  end
+  vim.treesitter.start(buf)
+  vim.bo[buf].syntax = "ON"
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(ev)
+    local lang = vim.treesitter.language.get_lang(ev.match)
+    if not lang then
+      return
+    end
+    local buf = ev.buf
+    if is_parser_installed(lang) then
+      start_treesitter(buf, lang)
+    elseif is_parser_available(lang) then
+      require("nvim-treesitter").install({ lang }):await(function()
+        start_treesitter(buf, lang)
+      end)
+    end
+  end,
+})
+
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
+    'neovim-treesitter/nvim-treesitter',
+    branch = 'main',
+    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
     lazy = false,
-    build = ":TSUpdate",
-    opts = {
-      ensure_installed = {
-        'bash',
-        'c',
-        'dart',
-        'elixir',
-        'heex',
-        'eex',
-        'elm',
-        'graphql',
-        'html',
-        'javascript',
-        'json',
-        'markdown',
-        'markdown_inline',
-        'lua',
-        'python',
-        'regex',
-        'rust',
-        'svelte',
-        'tsx',
-        'typescript',
-        'vim',
-        'vimdoc',
-        'vue',
-        'yaml',
-        'dap_repl'
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter").install(opts.ensure_installed)
-
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
-        callback = function(args)
-          local buf = args.buf
-          local filetype = args.match
-
-          local language = vim.treesitter.language.get_lang(filetype) or filetype
-          if not vim.treesitter.language.add(language) then
-            return
-          end
-
-
-          vim.wo.foldmethod = "expr"
-          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-
-          -- Highlight
-          vim.treesitter.start(buf, language)
-
-          -- Indent
-          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end
-      })
-    end
+    build = ':TSUpdate',
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter" }
+    dependencies = { "neovim-treesitter/nvim-treesitter" }
   },
   {
     "windwp/nvim-ts-autotag",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "neovim-treesitter/nvim-treesitter" },
     lazy = true,
     event = { "BufReadPre", "BufNewFile" },
     opts = {

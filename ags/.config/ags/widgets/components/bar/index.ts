@@ -9,3 +9,4 @@ export { default as Network } from './Network';
 export { default as Clock } from './Clock';
 export { default as Systray } from './SysTray';
 export { default as Notifications } from './Notifications';
+export { default as AnthropicUsage } from './AnthropicUsage';

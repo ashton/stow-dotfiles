@@ -1,2 +1,5 @@
 hl.window_rule({ match = { class = "Logseq" }, workspace = "special:notes" })
 hl.window_rule({ match = { class = "ghostty.floatty" }, workspace = "special:terminal" })
+hl.window_rule({ match = { class = "firefox" }, workspace = "name:web" })
+hl.window_rule({ match = { class = "Spotify" }, workspace = "name:music" })
+hl.window_rule({ match = { class = "org.gnupg.pinentry-qt" }, float = true, center = true, pin = true, no_shadow = true, no_blur = true })

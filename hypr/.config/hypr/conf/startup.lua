@@ -1,5 +1,6 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemct --user enable --now hyprpolkitagent.service")
+  hl.exec_cmd("uwsm app -- hypridle")
   hl.exec_cmd("uwsm app -- wayle panel start")
   hl.exec_cmd("systemct --user start elephant.service")
   hl.exec_cmd("hyprpm reload -n")

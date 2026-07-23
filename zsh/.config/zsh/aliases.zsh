@@ -13,6 +13,17 @@ alias cfg-add="stow -vt ~"
 alias cfg-rm="stow -vDt ~"
 alias cfg-reload="stow -vRt ~"
 
+# suffix aliases
+alias -s zsh="$EDITOR"
+alias -s toml="$EDITOR"
+alias -s config="$EDITOR"
+alias -s lua="$EDITOR"
+alias -s rc="$EDITOR"
+alias -s md="glow"
+alias -s json="jless"
+alias -s yml="bat -l yaml"
+alias -s yaml="bat -l yaml"
+
 # global aliases
 alias -g JQ="| jq"
 alias -g CP="| pbcopy"

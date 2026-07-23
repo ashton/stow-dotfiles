@@ -2,6 +2,7 @@
 alacritty
 amd-ucode
 asdf-vm
+atuin
 awww
 aylurs-gtk-shell-git
 base
@@ -38,6 +39,7 @@ ghostty
 git
 github-cli
 glfw
+glow
 go
 godot
 gpart
@@ -61,6 +63,7 @@ imagemagick
 imv
 iwd
 jdk-openjdk
+jless
 kitty
 less
 libastal-meta
@@ -93,6 +96,7 @@ playerctl
 power-profiles-daemon
 python-bcc
 python-cairo
+python-faker
 python-gpustat
 python-loguru
 python-pipx
@@ -119,6 +123,7 @@ thunar
 ttf-monaco-nerd-font-git
 ttf-ubuntu-nerd
 unzip
+uv
 uwsm
 vial-appimage
 vicinae-bin

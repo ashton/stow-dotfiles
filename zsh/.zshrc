@@ -73,11 +73,6 @@ zinit light z-shell/fast-syntax-highlighting
 
 zinit load zsh-users/zsh-history-substring-search
 
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit load trapd00r/LS_COLORS
-
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 

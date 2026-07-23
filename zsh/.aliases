@@ -28,3 +28,4 @@ alias -g CP="| wl-copy"
 
 # directory aliases
 hash -d df=~/dev/dotfiles
+hash -d nv=~/.config/nvim

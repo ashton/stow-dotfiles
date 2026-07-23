@@ -1,6 +1,6 @@
 tap "charmbracelet/tap"
-tap "d12frosted/emacs-plus", trusted: true
-tap "wontaeyang/hrm", trusted: true
+tap "d12frosted/emacs-plus"
+tap "wontaeyang/hrm"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Secure and free password manager for all of your devices
@@ -17,6 +17,8 @@ brew "eza"
 brew "ffmpeg"
 # Terminal JSON viewer
 brew "fx"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Render markdown on the CLI
 brew "glow"
 # CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
@@ -29,6 +31,8 @@ brew "k9s"
 brew "kubectx"
 # Logging tool for Kubernetes with a real-time web dashboard
 brew "kubetail"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Postgres C API library
 brew "libpq"
 # Incremental parsing library
@@ -61,8 +65,6 @@ brew "tree-sitter-cli"
 brew "vault-cli"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-# A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
-brew "charmbracelet/tap/crush", trusted: true
 # Desktop password and login vault
 cask "bitwarden"
 # Utility that prevents the system from going to sleep
@@ -74,7 +76,7 @@ cask "codex"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # GNU Emacs text editor with patches for macOS
-cask "d12frosted/emacs-plus/emacs-plus-app", trusted: true
+cask "d12frosted/emacs-plus/emacs-plus-app"
 cask "font-caskaydia-cove-nerd-font"
 cask "font-caskaydia-mono-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
@@ -85,8 +87,7 @@ cask "font-ubuntu-sans-nerd-font"
 cask "gcloud-cli"
 # GIF recording and sharing
 cask "gifox"
-# Home row mods for macOS
-cask "wontaeyang/hrm/hrm"
+cask "hrm"
 # Keyboard customiser
 cask "karabiner-elements"
 # Privacy-first, open-source platform for knowledge sharing and management

@@ -8,6 +8,14 @@ alias cfg-add="stow -vt ~"
 alias cfg-rm="stow -vDt ~"
 alias cfg-reload="stow -vRt ~"
 
+# global aliases
+alias -g JQ="| jq"
+alias -g CP="| pbcopy"
+
+# directory aliases
+hash -d df=~/dev/dotfiles
+hash -d nv=~/.config/nvim
+
 # ls aliases
 alias lla="eza --all --long --group-directories-first --icons=always"
 alias ls="eza --grid --group-directories-first --icons=always"

@@ -104,6 +104,8 @@ return {
         "elixirls",
         -- "nextls",
         "yamlls",
+        "zls",
+        "ols"
       },
       automatic_enable = {
         exclude = { "rust_analyzer" }

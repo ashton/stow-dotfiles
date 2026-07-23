@@ -98,6 +98,7 @@ zinit ice from'gh-r' as'program'
 zinit light decayofmind/zsh-fast-alias-tips
 
 zinit light wintermi/zsh-mise
+zinit load atuinsh/atuin
 
 zinit cdreplay -q
 

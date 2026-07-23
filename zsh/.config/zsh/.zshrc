@@ -16,13 +16,10 @@ setopt AUTOCD
 setopt NOBEEP
 setopt NUMERIC_GLOB_SORT
 
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -47,8 +44,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-eval "$(starship init zsh)"
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive match
 
 bindkey -e
 
@@ -102,18 +99,22 @@ zinit load atuinsh/atuin
 
 zinit cdreplay -q
 
-### Sources
+### inits
 #. "$HOME/.cargo/env"
+FZF_CTRL_R_COMMAND= source <(fzf --zsh)
+eval "$(starship init zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
+[[ -f ~/.ifoodrc ]] && source ~/.ifoodrc
 
 ### Bindings
-source ~/.bindings
+source "$ZDOTDIR/bindings.zsh"
 
 ### Aliases
-source ~/.aliases
+source "$ZDOTDIR/aliases.zsh"
 
-eval "$(~/.local/bin/mise activate zsh)"
+### FZF
+source "$ZDOTDIR/fzf.zsh"
 
-[[ -f ~/.ifoodrc ]] && source ~/.ifoodrc
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)

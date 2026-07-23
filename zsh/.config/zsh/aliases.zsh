@@ -1,6 +1,8 @@
 alias cat="bat"
+alias grep="rg --color=auto"
 alias vim="nvim"
 alias v="vim"
+alias df="df -h"
 alias bundlepkg="brew bundle dump --force --file $DOT/homebrew/.config/homebrew/Brewfile --formulae --cask --taps"
 alias sf="spf --config-file $XDG_CONFIG_HOME/superfile/config.toml --hotkey-file $XDG_CONFIG_HOME/superfile/hotkeys.toml"
 
@@ -23,3 +25,4 @@ alias lla="eza --all --long --group-directories-first --icons=always"
 alias ls="eza --grid --group-directories-first --icons=always"
 alias ll="eza --long --group-directories-first --icons=always"
 alias la="eza --all --grid --group-directories-first --icons=always"
+alias tree="eza --all --tree --icons=always"

@@ -1,6 +1,8 @@
 tap "charmbracelet/tap"
 tap "d12frosted/emacs-plus", trusted: true
 tap "wontaeyang/hrm", trusted: true
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Secure and free password manager for all of your devices
 brew "bitwarden-cli"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
@@ -19,6 +21,8 @@ brew "fx"
 brew "glow"
 # CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
 brew "googleworkspace-cli"
+# Command-line pager for JSON data
+brew "jless"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Tool that can switch between kubectl contexts easily and create aliases
@@ -47,6 +51,10 @@ brew "starship"
 brew "stow"
 # VPN based on IPsec
 brew "strongswan"
+# Modern and pretty fancy file manager for the terminal
+brew "superfile"
+# Very fast implementation of tldr in Rust
+brew "tealdeer"
 # Parser generator tool
 brew "tree-sitter-cli"
 # Subversion-like utility to work with Jackrabbit FileVault

@@ -1,7 +1,7 @@
 alias cat="bat"
 alias vim="nvim"
 alias v="vim"
-alias bundlepkg="brew bundle dump --file $DOT/homebrew/.config/homebrew/Brewfile --formulae --cask --taps"
+alias bundlepkg="brew bundle dump --force --file $DOT/homebrew/.config/homebrew/Brewfile --formulae --cask --taps"
 
 # stow aliases
 alias cfg-add="stow -vt ~"

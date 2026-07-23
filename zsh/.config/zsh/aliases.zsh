@@ -5,6 +5,7 @@ alias v="vim"
 alias df="df -h"
 alias bundlepkg="brew bundle dump --force --file $DOT/homebrew/.config/homebrew/Brewfile --formulae --cask --taps"
 alias sf="spf --config-file $XDG_CONFIG_HOME/superfile/config.toml --hotkey-file $XDG_CONFIG_HOME/superfile/hotkeys.toml"
+alias hss="herdr server stop"
 
 # stow aliases
 alias cfg-add="stow -vt ~"

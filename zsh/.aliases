@@ -4,6 +4,7 @@ alias cat="bat"
 alias vim="nvim"
 alias v="vim"
 alias hc="hyprctl"
+alias bundlepkg="yay -Qqe > $DOT/system-packages/.packages"
 
 # yay aliases
 alias ys="yay" # search for term

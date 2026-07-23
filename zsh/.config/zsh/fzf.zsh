@@ -8,4 +8,4 @@ if command -v fd >/dev/null 2>&1; then
 fi
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'bat --color=always {}' --color=bg+:#3c3836,bg:#282828,spinner:#8ec07c,hl:#83a598,fg:#bdae93,header:#83a598,info:#fabd2f,pointer:#8ec07c,marker:#8ec07c,fg+:#ebdbb2,prompt:#fabd2f,hl+:#83a598"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'bat --color=always {}' --color=bg+:#212733,bg:#1f2430,spinner:#ffcc66,hl:#ffcc66,fg:#cbccc6,header:#ffcc66,info:#ffa759,pointer:#ffcc66,marker:#ffcc66,fg+:#ffcc66,prompt:#707a8c,hl+:#ffcc66"

@@ -7,3 +7,21 @@ gui:
     - [commits, reflog]
     - [stash]
   language: en
+  theme:
+    activeBorderColor:
+      - "#FFCC66" # Bright Amber
+      - bold
+    inactiveBorderColor:
+      - "#5C6773" # Charcoal Gray
+    optionsTextColor:
+      - "#95E6CB" # Aqua Teal
+    selectedLineBgColor:
+      - "#242936" # Mirage Depth Highlight
+    cherryPickedCommitBgColor:
+      - "#343F4C"
+    cherryPickedCommitFgColor:
+      - "#FFCC66"
+    unstagedChangesColor:
+      - "#F28779" # Soft Coral
+    defaultFgColor:
+      - "#CCCAC2" # Warm Off-White

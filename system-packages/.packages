@@ -7,6 +7,7 @@ awww
 aylurs-gtk-shell-git
 base
 base-devel
+bookokrat-bin
 brightnessctl
 btop
 cage
@@ -49,6 +50,7 @@ gtksourceview3
 gvfs
 gvfs-smb
 htop
+hygg
 hypridle
 hyprland
 hyprland-qt-support
@@ -114,10 +116,12 @@ rustup
 sassc
 sddm-git
 smartmontools
+smassh-bin
 smbclient
 spotify
 starship
 stow
+superfile
 swaync
 tealdeer
 telegram-desktop

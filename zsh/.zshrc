@@ -1,10 +1,20 @@
-setopt incappendhistory
-source ~/.zshenv
-
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+# History Options
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+
+setopt AUTOCD
+setopt NOBEEP
+setopt NUMERIC_GLOB_SORT
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/john/.zshrc'
@@ -90,13 +100,10 @@ zinit light z-shell/zsh-diff-so-fancy
 zinit ice from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
+zinit load atuinsh/atuin
 
 zinit load _local/dotfiles
 zi cdreplay -q
-
-### Sources
-. /opt/asdf-vm/asdf.sh
-#. "$HOME/.cargo/env"
 
 ### Bindings
 source ~/.bindings

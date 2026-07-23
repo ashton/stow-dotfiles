@@ -17,3 +17,14 @@ alias yc="yay -Yc" # cleanup packages
 alias cfad="stow -vt ~"
 alias cfrm="stow -vDt ~"
 alias cfre="stow -vRt ~"
+
+# suffix aliases
+alias -s json="jless"
+alias -s md="glow"
+
+# global aliases
+alias -g JQ="| jq"
+alias -g CP="| wl-copy"
+
+# directory aliases
+hash -d df=~/dev/dotfiles

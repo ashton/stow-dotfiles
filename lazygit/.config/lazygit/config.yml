@@ -1,0 +1,9 @@
+gui:
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  sidePanels:
+    - [files, worktrees]
+    - [branches, remotes, tags]
+    - [commits, reflog]
+    - [stash]
+  language: en

@@ -2,6 +2,7 @@ alias cat="bat"
 alias vim="nvim"
 alias v="vim"
 alias bundlepkg="brew bundle dump --force --file $DOT/homebrew/.config/homebrew/Brewfile --formulae --cask --taps"
+alias sf="spf --config-file $XDG_CONFIG_HOME/superfile/config.toml --hotkey-file $XDG_CONFIG_HOME/superfile/hotkeys.toml"
 
 # stow aliases
 alias cfg-add="stow -vt ~"
@@ -14,6 +15,7 @@ alias -g CP="| pbcopy"
 
 # directory aliases
 hash -d df=~/dev/dotfiles
+hash -d cf=~/.config
 hash -d nv=~/.config/nvim
 
 # ls aliases

@@ -1,3 +1,9 @@
 [tools]
-node = "latest"
+node = "26"
 rust = "latest"
+erlang = "latest"
+gleam = "latest"
+elixir = "1.19.5-otp-28"
+zig = "0.16.0"
+go = "1.26.1"
+opam = { version = "2.5.1", asset_pattern = "opam-*-{gnu_arch}-{os}" }

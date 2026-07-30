@@ -104,6 +104,7 @@ return {
         "rescriptls",
         "rust_analyzer",
         "svelte",
+        "toml",
         "yamlls",
       },
       automatic_enable = {

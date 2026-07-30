@@ -1,10 +1,13 @@
-alias cfg="dotbare"
-alias cfgs="dotbare fstat"
 alias cat="bat"
+alias grep="rg --color=auto"
 alias vim="nvim"
 alias v="vim"
+alias df="df -h"
 alias hc="hyprctl"
 alias bundlepkg="yay -Qqe > $DOT/system-packages/.packages"
+alias sf="spf --config-file $XDG_CONFIG_HOME/superfile/config.toml --hotkey-file $XDG_CONFIG_HOME/superfile/hotkeys.toml"
+alias hss="herdr server stop"
+alias lg="lazygit"
 
 # yay aliases
 alias ys="yay" # search for term
@@ -15,13 +18,20 @@ alias yc="yay -Yc" # cleanup packages
 
 
 # stow aliases
-alias cfad="stow -vt ~"
-alias cfrm="stow -vDt ~"
-alias cfre="stow -vRt ~"
+alias cfadd="stow -vt $HOME"
+alias cfrem="stow -vDt $HOME"
+alias cfrel="stow -vRt $HOME"
 
 # suffix aliases
+alias -s zsh="$EDITOR"
+alias -s toml="$EDITOR"
+alias -s config="$EDITOR"
+alias -s lua="$EDITOR"
+alias -s rc="$EDITOR"
 alias -s json="jless"
 alias -s md="glow"
+alias -s yml="bat -l yaml"
+alias -s yaml="bat -l yaml"
 
 # global aliases
 alias -g JQ="| jq"
@@ -29,7 +39,9 @@ alias -g CP="| wl-copy"
 
 # directory aliases
 hash -d df=~/dev/dotfiles
+hash -d cf=~/.config
 hash -d nv=~/.config/nvim
+hash -d z=~/.config/zsh
 
 # ls aliases
 alias lla="eza --all --long --group-directories-first --icons=always"

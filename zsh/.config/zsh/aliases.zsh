@@ -10,11 +10,13 @@ alias hss="herdr server stop"
 alias lg="lazygit"
 
 # yay aliases
-alias ys="yay" # search for term
+alias ys="yay -Ss" # search for term
 alias yi="yay -S" # install package
 alias yr="yay -Rns" # remove package
 alias yu="yay -Sua" # upgrade packages
 alias yc="yay -Yc" # cleanup packages
+alias ycc="yay -Scc" # clean cache
+alias yh="yay -Ps" # system health
 
 
 # stow aliases

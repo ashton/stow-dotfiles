@@ -12,10 +12,12 @@ brightnessctl
 btop
 cage
 calibre
+chatgpt-desktop-bin
 claude-code-stable
 cliphist
 cmake
 cpio
+crush
 dart-sass
 discord
 dmenu
@@ -49,6 +51,7 @@ gst-plugin-pipewire
 gtksourceview3
 gvfs
 gvfs-smb
+herdr-bin
 htop
 hygg
 hypridle
@@ -67,6 +70,7 @@ iwd
 jdk-openjdk
 jless
 kitty
+lazygit
 less
 libastal-meta
 libpulse
@@ -85,11 +89,13 @@ network-manager-applet
 networkmanager
 nnn
 nwg-look
+opencode
 os-prober
 pacman-contrib
 pandoc-cli
 pass
 pavucontrol
+pi-coding-agent
 pinentry-bemenu
 pipewire
 pipewire-alsa
@@ -128,6 +134,7 @@ telegram-desktop
 thunar
 ttf-monaco-nerd-font-git
 ttf-ubuntu-nerd
+tuicr
 unzip
 uv
 uwsm

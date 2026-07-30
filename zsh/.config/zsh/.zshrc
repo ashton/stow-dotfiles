@@ -1,3 +1,5 @@
+[[ -f $HOME/.secrets ]] && source $HOME/.secrets
+
 # Lines configured by zsh-newuser-install
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 HISTSIZE=100000
@@ -101,7 +103,7 @@ zinit load _local/dotfiles
 zi cdreplay -q
 
 ### Bindings
-source ~/.bindings
+source $XDG_CONFIG_HOME/zsh/bindings.zsh
 
 ### Aliases
-source ~/.aliases
+source $XDG_CONFIG_HOME/zsh/aliases.zsh

@@ -13,8 +13,8 @@ monitor = "*"
 show = true
 left = [
     "dashboard",
-    "updates",
     "hyprland-workspaces",
+    "custom-packages-outdated",
     "window-title",
 ]
 center = [
@@ -71,26 +71,26 @@ container-bg-color = "bg-overlay"
 border-show = true
 border-color = "status-success-subtle"
 
-[modules.hyprland-workspaces.workspace-map.5]
-icon = "tbf-messages-symbolic"
-
-[modules.hyprland-workspaces.workspace-map.2]
-icon = "firefox-symbolic"
+[modules.hyprland-workspaces.workspace-map.-97]
+icon = "si-logseq-symbolic"
 
 [modules.hyprland-workspaces.workspace-map.-98]
 icon = "terminal-symbolic"
 
-[modules.hyprland-workspaces.workspace-map.-97]
-icon = "si-logseq-symbolic"
+[modules.hyprland-workspaces.workspace-map.1]
+icon = "tbf-layout-dashboard-symbolic"
 
-[modules.hyprland-workspaces.workspace-map.4]
-icon = "si-spotify-symbolic"
+[modules.hyprland-workspaces.workspace-map.2]
+icon = "firefox-symbolic"
 
 [modules.hyprland-workspaces.workspace-map.3]
 icon = "applications-programming-symbolic"
 
-[modules.hyprland-workspaces.workspace-map.1]
-icon = "tbf-layout-dashboard-symbolic"
+[modules.hyprland-workspaces.workspace-map.4]
+icon = "si-spotify-symbolic"
+
+[modules.hyprland-workspaces.workspace-map.5]
+icon = "tbf-messages-symbolic"
 
 [modules.keybind-mode]
 icon-name = "cs-keyboard-symbolic"
@@ -116,10 +116,10 @@ label-color = "status-warning"
 button-bg-color = "bg-overlay"
 
 [modules.media.player-icons]
-"*vlc*" = "vlc"
+"*.mpv" = "gnome-mpv"
 "*firefox*" = "firefox"
 "*spotify*" = "spotify"
-"*.mpv" = "gnome-mpv"
+"*vlc*" = "vlc"
 
 [modules.network]
 icon-color = "fg-muted"
@@ -147,6 +147,31 @@ button-bg-color = "bg-overlay"
 icon-bg-color = "accent"
 label-color = "accent-hover"
 button-bg-color = "bg-overlay"
+
+[[modules.custom]]
+id = "packages-outdated"
+command = "yay -Qu | wc -l"
+mode = "poll"
+interval-ms = 1800000
+restart-policy = "never"
+restart-interval-ms = 1000
+format = "{{ output }}"
+hide-if-empty = true
+icon-name = "ld-package-open-symbolic"
+icon-show = true
+icon-color = "auto"
+icon-bg-color = "auto"
+label-show = true
+label-color = "auto"
+label-max-length = 0
+button-bg-color = "bg-surface-elevated"
+border-show = false
+border-color = "auto"
+left-click = "ghostty +new-window -e yay -Syu"
+right-click = ""
+middle-click = ""
+scroll-up = ""
+scroll-down = ""
 
 [wallpaper]
 cycling-enabled = true

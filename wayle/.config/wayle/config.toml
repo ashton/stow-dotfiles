@@ -1,1 +1,7 @@
 # Wayle configuration file
+[[modules.custom]]
+id = "packages-outdated"
+command = "yay -Qu | wc -l"
+interval-ms = 1800000  # 30 min
+icon-name = "ld-package-open-symbolic"
+format = "{{ output }}"

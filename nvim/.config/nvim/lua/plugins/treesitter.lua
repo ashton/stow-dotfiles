@@ -1,9 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    lazy = false,
+    branch = "master",
     build = ":TSUpdate",
+    lazy = false,
     opts = {
       ensure_installed = {
         'bash',
@@ -13,6 +13,7 @@ return {
         'heex',
         'eex',
         'elm',
+        'fsharp',
         'graphql',
         'html',
         'javascript',
@@ -34,31 +35,28 @@ return {
       },
     },
     config = function(_, opts)
-      require("nvim-treesitter").install(opts.ensure_installed)
+      local nvim_ts = require("nvim-treesitter")
+      nvim_ts.setup()
 
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
-        callback = function(args)
-          local buf = args.buf
-          local filetype = args.match
+      for _, ft in ipairs(opts.ensure_installed) do
+        local lang = vim.treesitter.language.get_lang(ft)
 
-          local language = vim.treesitter.language.get_lang(filetype) or filetype
-          if not vim.treesitter.language.add(language) then
-            return
+        if not vim.treesitter.language.add(lang) then
+          local available = vim.g.ts_available
+              or nvim_ts.get_available()
+          if not vim.g.ts_available then
+            vim.g.ts_available = available
           end
-
-
-          vim.wo.foldmethod = "expr"
-          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-
-          -- Highlight
-          vim.treesitter.start(buf, language)
-
-          -- Indent
-          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          if vim.tbl_contains(available, lang) then
+            nvim_ts.install(lang)
+          end
         end
-      })
+      end
     end
+  },
+  {
+    "nkrkv/nvim-treesitter-rescript",
+    dependencies = { "nvim-treesitter/nvim-treesitter" }
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

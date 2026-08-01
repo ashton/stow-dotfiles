@@ -5,20 +5,18 @@ alias v="vim"
 alias df="df -h"
 alias hc="hyprctl"
 alias hr="herdr"
-alias bundlepkg="yay -Qqe > $DOT/system-packages/.packages"
+alias bundlepkg="sudo dnf repoquery --userinstalled --qf \"%{NAME}\" > $DOT/system-packages/.packages"
 alias sf="spf --config-file $XDG_CONFIG_HOME/superfile/config.toml --hotkey-file $XDG_CONFIG_HOME/superfile/hotkeys.toml"
 alias hss="herdr server stop"
 alias lg="lazygit"
 
-# yay aliases
-alias ys="yay -Ss" # search for term
-alias yi="yay -S" # install package
-alias yr="yay -Rns" # remove package
-alias yu="yay -Sua" # upgrade packages
-alias yc="yay -Yc" # cleanup packages
-alias ycc="yay -Scc" # clean cache
-alias yh="yay -Ps" # system health
-
+# DNF aliases
+alias dni="sudo dnf install"
+alias dnin="sudo dnf info"
+alias dnl="sudo dnf list --installed"
+alias dnr="sudo dnf remove"
+alias dnu="sudo dnf upgrade"
+alias dns="sudo dnf search"
 
 # stow aliases
 alias cfadd="stow -vt $HOME"

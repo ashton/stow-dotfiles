@@ -1,10 +1,22 @@
-setopt incappendhistory
-source ~/.zshenv
+[[ -f $HOME/.secrets ]] && source $HOME/.secrets
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+# History Options
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+
+setopt AUTOCD
+setopt NOBEEP
+setopt NUMERIC_GLOB_SORT
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/john/.zshrc'
@@ -63,16 +75,14 @@ zinit light z-shell/fast-syntax-highlighting
 
 zinit load zsh-users/zsh-history-substring-search
 
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit load trapd00r/LS_COLORS
-
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
 zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
+
+zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
+zinit load ogham/exa
 
 zinit ice atload"unalias ld"
 zinit light RitchieS/zsh-exa
@@ -85,19 +95,16 @@ zinit ice as"program" pick"bin/git-dsf"
 zinit light z-shell/zsh-diff-so-fancy
 
 zinit ice from'gh-r' as'program'
-zinit light decayofmind/zsh-fast-alias-tips
-
-zinit light wintermi/zsh-mise
+zinit light sei40kr/fast-alias-tips-bin
+zinit light sei40kr/zsh-fast-alias-tips
+zinit load atuinsh/atuin
 
 zinit load _local/dotfiles
 zi cdreplay -q
 
-### Sources
-#. "$HOME/.cargo/env"
-
 ### Bindings
-source ~/.bindings
+source $XDG_CONFIG_HOME/zsh/bindings.zsh
 
 ### Aliases
-source ~/.aliases
-eval "$(~/.local/bin/mise activate zsh)"
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
+

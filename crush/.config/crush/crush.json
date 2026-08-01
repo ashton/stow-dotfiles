@@ -1,0 +1,15 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "mcp": {},
+  "lsp": {
+    "odin": {
+      "command": "~/.local/share/nvim/mason/bin/ols"
+    },
+    "typescript": {
+      "command": "~/.local/share/nvim/mason/bin/typescript-language-server"
+    },
+    "rust": {
+      "command": "~/.local/share/nvim/mason/bin/rust-analyzer"
+    }
+  }
+}

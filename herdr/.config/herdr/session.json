@@ -2,14 +2,14 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w1",
-      "custom_name": null,
-      "identity_cwd": "/home/john/dev",
+      "id": "w4",
+      "custom_name": "TI4",
+      "identity_cwd": "/home/john/dev/ti4",
       "public_pane_numbers": {
-        "1": 1,
-        "2": 6
+        "2": 2,
+        "1": 1
       },
-      "next_public_pane_number": 7,
+      "next_public_pane_number": 8,
       "public_tab_numbers": [
         1,
         2
@@ -17,13 +17,13 @@
       "next_public_tab_number": 3,
       "tabs": [
         {
-          "custom_name": null,
+          "custom_name": "claude",
           "layout": {
             "Pane": 1
           },
           "panes": {
             "1": {
-              "cwd": "/home/john/dev"
+              "cwd": "/home/john/dev/ti4"
             }
           },
           "zoomed": false,
@@ -31,13 +31,13 @@
           "root_pane": 1
         },
         {
-          "custom_name": "claude code",
+          "custom_name": "code",
           "layout": {
             "Pane": 2
           },
           "panes": {
             "2": {
-              "cwd": "/home/john/dev"
+              "cwd": "/home/john/dev/ti4"
             }
           },
           "zoomed": false,
@@ -46,10 +46,107 @@
         }
       ],
       "active_tab": 1
+    },
+    {
+      "id": "w7",
+      "custom_name": "AGS Widgets",
+      "identity_cwd": "/home/john/dev/dotfiles/ags/.config/ags",
+      "public_pane_numbers": {
+        "4": 2,
+        "3": 1
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": "code",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 3
+              },
+              "second": {
+                "Pane": 4
+              }
+            }
+          },
+          "panes": {
+            "3": {
+              "cwd": "/home/john/dev/dotfiles/ags/.config/ags",
+              "label": "code"
+            },
+            "4": {
+              "cwd": "/home/john/dev/dotfiles/ags/.config/ags",
+              "label": "shell"
+            }
+          },
+          "zoomed": false,
+          "focused": 4,
+          "root_pane": 3
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w8",
+      "custom_name": "TuigSeq",
+      "identity_cwd": "/home/john/dev/tuigseq",
+      "public_pane_numbers": {
+        "6": 2,
+        "5": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": "claude",
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
+              "cwd": "/home/john/dev/tuigseq",
+              "agent_session": {
+                "source": "herdr:claude",
+                "agent": "claude",
+                "kind": "id",
+                "value": "054da459-0c31-4cce-a807-ba2ee8a4a1dc"
+              }
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
+        },
+        {
+          "custom_name": "code",
+          "layout": {
+            "Pane": 6
+          },
+          "panes": {
+            "6": {
+              "cwd": "/home/john/dev/tuigseq"
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 6
+        }
+      ],
+      "active_tab": 1
     }
   ],
-  "active": 0,
-  "selected": 0,
+  "active": 2,
+  "selected": 2,
   "sidebar_width": 26,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []

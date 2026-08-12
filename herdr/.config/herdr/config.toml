@@ -59,22 +59,22 @@ name = "gruvbox"
 # Named punctuation such as minus, comma, ampersand, plus, and backtick is also accepted.
 # Most reliable direct bindings are ctrl+letter, function keys, and explicit modified chords.
 # alt+..., cmd/super, and punctuation-with-modifiers may depend on your terminal/tmux setup.
-prefix = ";"
+prefix = "ctrl+b"
 
 # Prefix-mode actions
 help = "prefix+?"
 settings = "prefix+."
 detach = "prefix+q"
-reload_config = "prefix+shift+r"
+reload_config = "prefix+shift+."
 # open_notification_target = "prefix+o"
-workspace_picker = "prefix+p"
+workspace_picker = "prefix+shift+p"
 goto = "prefix+g"
 new_workspace = "prefix+n"
 # new_worktree = "prefix+shift+g"
 # open_worktree = ""    # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
 rename_workspace = "prefix+alt+w"
-close_workspace = "prefix+shift+d"
+close_workspace = "prefix+ctrl+w"
 # previous_workspace = "" # optional, unset by default
 # next_workspace = ""     # optional, unset by default
 # previous_agent = ""     # optional, unset by default
@@ -82,13 +82,13 @@ close_workspace = "prefix+shift+d"
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
 # remote_image_paste = "ctrl+v" # only active in herdr --remote; empty disables raw-key image paste
 new_tab = "prefix+t"
-rename_tab = "prefix+shift+t"
+rename_tab = "prefix+alt+t"
 previous_tab = "prefix+["
 next_tab = "prefix+]"
 switch_tab = "prefix+1..9"
 # switch_workspace = ""   # optional indexed binding, e.g. "prefix+shift+1..9"
 close_tab = "prefix+w"
-# rename_pane = "prefix+shift+p"
+rename_pane = "prefix+alt+p"
 edit_scrollback = "prefix+e"
 focus_pane_left = "prefix+h"
 focus_pane_down = "prefix+j"
@@ -100,7 +100,7 @@ cycle_pane_previous = "prefix+shift+tab"
 split_vertical = "prefix+|"
 split_horizontal = "prefix+-"
 close_pane = "prefix+x"
-zoom = "prefix+enter"       # legacy alias: fullscreen
+zoom = "prefix+enter"  # legacy alias: fullscreen
 resize_mode = "prefix+r"
 toggle_sidebar = "prefix+b"
 
@@ -108,10 +108,10 @@ toggle_sidebar = "prefix+b"
 # They are independent from focus_pane_*. Do not include prefix+, esc, enter, tab, or 1..9 here.
 navigate_workspace_up = "up"
 navigate_workspace_down = "down"
-navigate_pane_left = "h"      # left arrow always focuses the pane to the left
+navigate_pane_left = "h"  # left arrow always focuses the pane to the left
 navigate_pane_down = "j"
 navigate_pane_up = "k"
-navigate_pane_right = "l"     # right arrow always focuses the pane to the right
+navigate_pane_right = "l"  # right arrow always focuses the pane to the right
 
 # Custom commands use the same binding syntax.
 # type = "shell" runs detached in the background.
@@ -121,6 +121,17 @@ navigate_pane_right = "l"     # right arrow always focuses the pane to the right
 # key = "prefix+alt+g"
 # type = "pane"
 # command = "lazygit"
+[[keys.command]]
+key = "prefix+p"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.projects"
+description = "Projects"
+
+[[keys.command]]
+key = "prefix+shift+k"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.quick-actions"
+description = "Quick Actions"
 
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
@@ -203,6 +214,7 @@ hide_tab_bar_when_single_tab = true
 
 # Background notification popup delivery
 show_agent_labels_on_pane_borders = true
+
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts
@@ -212,6 +224,7 @@ show_agent_labels_on_pane_borders = true
 # delay_seconds = 1
 
 delivery = "terminal"
+
 [ui.toast.herdr]
 # position = "bottom-right"
 

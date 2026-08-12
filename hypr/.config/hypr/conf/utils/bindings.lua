@@ -1,5 +1,6 @@
-local function main_mod_bind(key, dispatcher)
-  hl.bind("CTRL + ALT + SUPER +" .. key, dispatcher)
+local function main_mod_bind(key, dispatcher, options)
+  options = options or {}
+  hl.bind("CTRL + ALT + SUPER +" .. key, dispatcher, options)
 end
 
 local function exec_with_uwsm(args)

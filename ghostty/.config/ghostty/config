@@ -61,6 +61,7 @@ gtk-quick-terminal-layer = overlay
 shell-integration = zsh
 shell-integration-features = title,no-cursor
 quit-after-last-window-closed = false
+confirm-close-surface = false
 auto-update = download
 keybind = alt+left=esc:b
 keybind = alt+right=esc:f

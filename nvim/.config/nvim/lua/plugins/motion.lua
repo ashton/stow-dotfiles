@@ -22,8 +22,6 @@ return {
           around_last = "agl",
           inside_last = "igl",
         },
-        goto_left = "[a",
-        goto_right = "]a"
       }
     end,
   },
@@ -47,9 +45,9 @@ return {
   {
     "chrisgrieser/nvim-spider",
     keys = {
-      { "g]s", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" } },
-      { "g]e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
-      { "g[s", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
+      { "gw", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" }, desc = "goto next subword" },
+      { "ge", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" }, desc = "goto next (end) subword" },
+      { "gb", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" }, desc = "goto previous subword" },
     },
   },
 }

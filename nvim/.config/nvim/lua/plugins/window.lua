@@ -10,7 +10,7 @@ return {
     lazy = true,
     config = true,
     keys = {
-      { "gw", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Pick Window" }
+      { "<leader>;", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Pick Window" }
     },
   },
   {

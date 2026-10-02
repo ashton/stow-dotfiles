@@ -5,6 +5,9 @@ return function()
     { "<bs><bs>", desc = "Clear search highlights" },
     { "<tab>", "%", desc = "go to matching part", mode = { "n" } },
 
+    { "if", desc = "inner function", mode = { "x", "o" } },
+    { "af", desc = "outer function", mode = { "x", "o" } },
+
     { "<leader>b", group = "buffer", icon = "󰪷" },
     { "<leader>bn", "<CMD>bn<CR>", desc = "Go to next buffer" },
     { "<leader>bp", "<CMD>bp<CR>", desc = "Go to previous buffer" },

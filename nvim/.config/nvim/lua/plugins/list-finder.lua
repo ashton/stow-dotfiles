@@ -90,6 +90,7 @@ return {
     "folke/trouble.nvim",
     opts = {
       auto_close = true,
+      auto_jump = true,
       keys = {
         ["<cr>"] = "jump_close"
       }
@@ -107,13 +108,13 @@ return {
         desc = "LSP Definitions (Trouble)",
       },
       {
-        "<leader>cr",
+        "<leader>cD",
         "<cmd>Trouble lsp_references toggle focus=true<cr>",
         desc = "LSP References (Trouble)",
       },
       {
         "gd",
-        "<cmd>Trouble lsp_definitions toggle<cr>",
+        "<cmd>Trouble lsp_definitions toggle focus=true<cr>",
         desc = "LSP Definitions (Trouble)",
       },
       {
@@ -122,7 +123,7 @@ return {
         desc = "Symbols (Trouble)",
       },
       {
-        "gr",
+        "gD",
         "<cmd>Trouble lsp_references toggle focus=true<cr>",
         desc = "LSP References (Trouble)",
       }

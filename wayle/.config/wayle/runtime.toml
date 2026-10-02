@@ -1,6 +1,6 @@
 [general]
 font-sans = "Ubuntu Nerd Font"
-font-mono = "JetBrainsMono Nerd Font Propo"
+font-mono = "UbuntuMono Nerd Font Mono"
 
 [bar]
 inset-edge = 0.5

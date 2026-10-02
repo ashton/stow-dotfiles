@@ -15,3 +15,7 @@ export MANPAGER="bat -plman"
 export DOT="/home/john/dev/dotfiles"
 export STOW_DIR=$DOT
 export GPG_TTY=$(tty)
+
+if [[ -f "$ZDOTDIR/gh-claude-integration.zsh" ]]; then
+    source "$ZDOTDIR/gh-claude-integration.zsh"
+fi

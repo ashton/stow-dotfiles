@@ -27,5 +27,10 @@ return {
     clipboard_command = "vicinae vicinae://launch/clipboard/history",
     emoji_command = "vicinae vicinae://launch/core/search-emojis",
     windows_command = "vicinae vicinae://launch/wm/switch-windows"
+  },
+
+  screenshot = {
+    name = "hyprshot",
+    start_command = "hyprshot -m region --clipboard-only"
   }
 }

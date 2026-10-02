@@ -13,6 +13,9 @@
    "pop_to_root_on_close": true,
    "escape_key_behavior": "close_window",
    "favicon_service": "google",
+   "tray": {
+      "enabled": false
+   },
    "font": {
       "normal": {
          "family": "Ubuntu Nerd Font"
